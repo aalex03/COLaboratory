@@ -19,9 +19,9 @@ public class ConsoleLogger implements ILogger {
     }
 
     @Override
-    public void writeTime(String message, long timeNano, TimeUnit unit) {
-        int difference = unit.ordinal() - TimeUnit.NANOSECONDS.ordinal();  //diff = -2
-        write(String.format("%s %.3f %s", message, timeNano / Math.pow(10, difference*3), unit));
+    public void writeTime(String message, long nanos, TimeUnit unit) {
+        double time = TimeUnitHelper.convert(nanos, unit);
+        write(String.format("%s %.3f %s", message, time, unit));
     }
 }
 
