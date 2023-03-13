@@ -21,8 +21,8 @@ public class TestDemoBenchmark {
             benchmark.run();
             long time = timer.pause();
             float offset = 100*(time - (float)sleepTime * 1000000) / ((float)sleepTime * 1000000);
-            logger.writeTime("Run " + i + ": ", time, TimeUnit.SECONDS);
-            logger.write("Offset: " + offset + "%");
+            logger.writeTime("Run " + i + ": ", time, TimeUnit.MILLISECONDS);
+            logger.write(String.format("Offset: %.2f%%", offset));
         }
         long time = timer.stop();
         logger.writeTime("Finished in: ", time, TimeUnit.SECONDS);

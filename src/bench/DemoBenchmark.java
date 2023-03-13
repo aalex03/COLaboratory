@@ -13,6 +13,12 @@ public class DemoBenchmark implements IBenchmark{
         for(int i = 0; i < size; i++)
             data[i] = random.nextInt();
     }
+
+    @Override
+    public void warmUp() {
+
+    }
+
     private void bubbleSort(){
         for(int i = 0; i < size; i++)
             for(int j = 0; j < size - 1; j++)
